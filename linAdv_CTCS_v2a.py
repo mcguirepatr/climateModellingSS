@@ -42,6 +42,7 @@ def main( ) :
     dt = c* dx / u
     t = nt * dt
 # Plot the s o l u t i o n in comparison to the a n a l y t i c s o l u t i o n
+    plt.plot(x, initialBell(x) , 'r' , label = 'initial' )
     plt.plot(x, initialBell(x - u* t) , 'k' , label = 'analytic' )
     plt.plot(x, phi, 'b', label = 'CTCS' )
     plt.legend (loc='best' )
