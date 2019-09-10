@@ -31,11 +31,11 @@ def main( ) :
         for j in range(1 , nx ) :
             phiNew[j] = phiOld[j] - c * ( phi[j + 1] - phi[j-1])
 # apply p e r i o d i c boundary c o n d i t i o n s
-            phiNew[0] = phiOld[0] - c * (phi[1] - phi[nx-1])
-            phiNew[nx] = phiNew [0]
+        phiNew[0] = phiOld[0] - c * (phi[1] - phi[nx-1])
+        phiNew[nx] = phiNew[0]
 # u p d a t e p h i f o r t h e n e x t t i m e -s t e p
-            phiOld = phi.copy( )
-            phi = phiNew.copy( )
+        phiOld = phi.copy( )
+        phi = phiNew.copy( )
 # derived quantities
     u = 1.
     dx = 1. / nx
@@ -43,7 +43,7 @@ def main( ) :
     t = nt * dt
 # Plot the s o l u t i o n in comparison to the a n a l y t i c s o l u t i o n
     plt.plot(x, initialBell(x) , 'r' , label = 'initial' )
-    plt.plot(x, initialBell(x - u* t) , 'k' , label = 'analytic' )
+    plt.plot(x, initialBell(x - u*t) , 'k' , label = 'analytic' )
     plt.plot(x, phi, 'b', label = 'CTCS' )
     plt.legend (loc='best' )
     plt.ylabel('$\phi$')
